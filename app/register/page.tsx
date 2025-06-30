@@ -5,13 +5,13 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await fetch('/api/register', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
     });
-    const data = await res.json();
+    await res.json(); // or: const data = await res.json();
     alert('Registered successfully');
   };
 
