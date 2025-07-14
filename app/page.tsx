@@ -45,7 +45,7 @@ export default function HomePage() {
             {[1, 2, 3].map((item) => (
               <Image 
                 key={item}
-                src={`https://randomuser.me/api/portraits/${item % 2 === 0 ? 'women' : 'men'}/${item}0.jpg`}
+                src={`/images/avatars/${item % 2 === 0 ? 'woman' : 'man'}-${item}.jpg`}
                 alt="User"
                 width={40}
                 height={40}
@@ -74,11 +74,12 @@ export default function HomePage() {
         className="relative"
       >
         <Image
-          src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?cs=srgb&dl=pexels-anush-1229356.jpg&fm=jpg"
+          src="/images/fitness-main.jpg"
           alt="Fitness"
           width={700}
           height={500}
           className="rounded-2xl shadow-2xl w-full h-auto max-h-[500px] object-cover"
+          priority
         />
         <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100">
           <div className="flex items-center">
