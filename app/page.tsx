@@ -11,12 +11,12 @@ export default function HomePage() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-5xl font-extrabold text-green-700 mb-6 leading-tight">
+        <h1 className="text-5xl font-extrabold text-green-700 mb-6 leading-tight">
           Your Personal <br /> 
           <span className="text-green-500 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
             Fitness Tracker
           </span>
-        </h2>
+        </h1>
         <p className="text-lg text-gray-600 mb-8 max-w-lg">
           Track your workouts, meals, and progress all in one place. Stay fit, stay healthy!
           Achieve your fitness goals with our comprehensive tracking tools and personalized insights.
@@ -26,6 +26,7 @@ export default function HomePage() {
             <Link
               href="/register"
               className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all shadow-lg hover:shadow-green-200 font-medium"
+              aria-label="Get Started with Fitness Tracker"
             >
               Get Started
             </Link>
@@ -34,6 +35,7 @@ export default function HomePage() {
             <Link
               href="/dashboard"
               className="px-8 py-3 border-2 border-green-500 text-green-600 rounded-lg hover:bg-green-50 transition-all font-medium"
+              aria-label="View Dashboard"
             >
               View Dashboard
             </Link>
@@ -46,21 +48,20 @@ export default function HomePage() {
               <Image 
                 key={item}
                 src={`/images/avatars/${item % 2 === 0 ? 'woman' : 'man'}-${item}.jpg`}
-                alt="User"
+                alt={`User avatar ${item}`}
                 width={40}
                 height={40}
-                priority  // 🚀 Make this load first
-                sizes="(max-width: 768px) 36px, 45px"
-                fetchPriority="high" 
-                className="rounded-full border-2 border-white"
+                priority
+                loading="eager"
+                className="rounded-full border-2 border-white w-10 h-10"
               />
             ))}
           </div>
           <div className="text-sm text-gray-500">
             <p>Join <span className="font-bold text-green-600">1,000+</span> active users</p>
-            <div className="flex items-center mt-1">
+            <div className="flex items-center mt-1" aria-label="5 star rating from 200+ reviews">
               {[1, 2, 3, 4, 5].map((star) => (
-                <svg key={star} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg key={star} className="w-4 h-4 text-yellow-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
@@ -78,18 +79,18 @@ export default function HomePage() {
       >
         <Image
           src="/images/fitness-main.jpg"
-          alt="Fitness"
+          alt="Person tracking fitness progress on a smartphone"
           width={700}
           height={500}
-          sizes="(max-width: 768px) 100vw, 700px"
           priority
-          fetchPriority="high"
+          loading="eager"
           className="rounded-2xl shadow-2xl w-full h-auto max-h-[500px] object-cover"
+          quality={85}
         />
         <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100">
           <div className="flex items-center">
             <div className="p-3 bg-green-100 rounded-lg mr-3">
-              <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
