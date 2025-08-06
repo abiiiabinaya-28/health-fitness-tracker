@@ -81,11 +81,10 @@ export default function HomePage() {
           alt="Fitness"
           width={700}
           height={500}
-          //sizes="(max-width: 768px) 36px, 45px"
-          priority  // 🚀 Make this load first
+          sizes="(max-width: 768px) 100vw, 700px"
+          priority
           fetchPriority="high"
           className="rounded-2xl shadow-2xl w-full h-auto max-h-[500px] object-cover"
-        
         />
         <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100">
           <div className="flex items-center">
