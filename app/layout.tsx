@@ -1,6 +1,6 @@
 // app/layout.tsx (server component)
 import './globals.css';
-import ClientLayout from './components/ClientLayout'; // move header logic to client
+import ClientLayout from './components/ClientLayout';
 
 export const metadata = {
   title: 'FitTrack - Health & Fitness Tracker',

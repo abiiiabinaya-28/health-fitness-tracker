@@ -49,6 +49,9 @@ export default function HomePage() {
                 alt="User"
                 width={40}
                 height={40}
+                priority  // 🚀 Make this load first
+                sizes="(max-width: 768px) 36px, 45px"
+                fetchPriority="high" 
                 className="rounded-full border-2 border-white"
               />
             ))}
@@ -78,8 +81,11 @@ export default function HomePage() {
           alt="Fitness"
           width={700}
           height={500}
+          //sizes="(max-width: 768px) 36px, 45px"
+          priority  // 🚀 Make this load first
+          fetchPriority="high"
           className="rounded-2xl shadow-2xl w-full h-auto max-h-[500px] object-cover"
-          priority
+        
         />
         <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100">
           <div className="flex items-center">
